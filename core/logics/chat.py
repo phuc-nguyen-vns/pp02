@@ -41,4 +41,4 @@ def generate_next_question(request: ChatGenerationModel, client: object):
         messages=[{"role": "user", "content": prompt_content}]
     )
 
-    return json.loads(completion.choices[0].message.content)
+    return completion.choices[0].message.content
