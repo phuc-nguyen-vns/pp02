@@ -20,7 +20,7 @@ nest_asyncio.apply()
 
 # === Router Imports ===
 # from apis.v1.intent_router import router as intent_router
-# from apis.v1.chat_router import router as chat_router
+from apis.v1.chat_router import router as chat_router
 # from apis.v1.meilisearch_router import router as meilisearch_router
 # from apis.v1.demo_router import router as demo_router
 from apis.v2.demo_router import router as demo_router_v2
@@ -49,7 +49,7 @@ def health_check():
 
 # === Include Routers ===
 # api_server.include_router(intent_router, prefix="/v1")
-# api_server.include_router(chat_router, prefix="/v1")
+api_server.include_router(chat_router, prefix="/v1")
 # api_server.include_router(meilisearch_router, prefix="/v1")
 # api_server.include_router(demo_router, prefix="/v1")
 api_server.include_router(demo_router_v2, prefix="/v2")

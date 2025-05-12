@@ -26,7 +26,7 @@ COPY . /app
 RUN uv sync --locked
 
 # Expose API port
-EXPOSE 8000
+EXPOSE 8001
 
 # Start FastAPI app using uv environment
 CMD ["uv", "run", "uvicorn", "server:api_server", "--host", "0.0.0.0", "--port", "8001", "--reload", "--workers", "4"]
